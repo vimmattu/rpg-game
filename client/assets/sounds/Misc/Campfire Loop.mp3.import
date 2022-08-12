@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Campfire Loop.mp3-7892f199b18c1868ec7d190db7419c38.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Misc/Campfire Loop.mp3"
+dest_files=[ "res://.import/Campfire Loop.mp3-7892f199b18c1868ec7d190db7419c38.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

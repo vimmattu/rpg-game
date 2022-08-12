@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Impact 5.mp3-93b95f0e79581608c597b294ee5e9450.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Weapons and Impacts/Impact 5.mp3"
+dest_files=[ "res://.import/Impact 5.mp3-93b95f0e79581608c597b294ee5e9450.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Coin Flip 3.mp3-88e70efc939b43d4ef40d89312f8d3e5.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Coins and Inventory/Coin Flip 3.mp3"
+dest_files=[ "res://.import/Coin Flip 3.mp3-88e70efc939b43d4ef40d89312f8d3e5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

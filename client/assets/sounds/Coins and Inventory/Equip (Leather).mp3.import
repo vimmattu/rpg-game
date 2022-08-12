@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Equip (Leather).mp3-beb59c55cf048bf911eb1b8a9e5f3748.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Coins and Inventory/Equip (Leather).mp3"
+dest_files=[ "res://.import/Equip (Leather).mp3-beb59c55cf048bf911eb1b8a9e5f3748.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

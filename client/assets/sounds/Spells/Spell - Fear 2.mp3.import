@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Spell - Fear 2.mp3-c43a07438d2d289884ee5485b35f1928.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Spells/Spell - Fear 2.mp3"
+dest_files=[ "res://.import/Spell - Fear 2.mp3-c43a07438d2d289884ee5485b35f1928.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

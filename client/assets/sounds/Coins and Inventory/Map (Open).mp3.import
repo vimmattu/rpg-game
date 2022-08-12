@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Map (Open).mp3-e2411439da80f8518e1fecc5778096a7.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Coins and Inventory/Map (Open).mp3"
+dest_files=[ "res://.import/Map (Open).mp3-e2411439da80f8518e1fecc5778096a7.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

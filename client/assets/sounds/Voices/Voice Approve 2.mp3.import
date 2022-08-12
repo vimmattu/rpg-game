@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voice Approve 2.mp3-3e1a53c82c6ebfc0777c5896e84e802e.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Voices/Voice Approve 2.mp3"
+dest_files=[ "res://.import/Voice Approve 2.mp3-3e1a53c82c6ebfc0777c5896e84e802e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

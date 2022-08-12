@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Horse Walk.mp3-9d36cea5b5db717e8f5750c24e0ae770.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Beasts and Animals/Horse Walk.mp3"
+dest_files=[ "res://.import/Horse Walk.mp3-9d36cea5b5db717e8f5750c24e0ae770.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

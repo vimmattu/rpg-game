@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Stepbeast 6.mp3-03e874dfde0cceca07ed21f1e0077aff.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Steps/Stepbeast 6.mp3"
+dest_files=[ "res://.import/Stepbeast 6.mp3-03e874dfde0cceca07ed21f1e0077aff.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Beast Sleeping.mp3-1af19d1923033e47a7190a013df5e2f4.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Beasts and Animals/Beast Sleeping.mp3"
+dest_files=[ "res://.import/Beast Sleeping.mp3-1af19d1923033e47a7190a013df5e2f4.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

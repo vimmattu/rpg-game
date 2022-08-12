@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Monster 1.mp3-355a3aebbd773f6a4e643cc69d22b538.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Beasts and Animals/Monster 1.mp3"
+dest_files=[ "res://.import/Monster 1.mp3-355a3aebbd773f6a4e643cc69d22b538.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

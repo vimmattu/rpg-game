@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Step Armor 6.mp3-0453ae5d09d213ca4e67e1c1bae6624f.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Steps/Step Armor 6.mp3"
+dest_files=[ "res://.import/Step Armor 6.mp3-0453ae5d09d213ca4e67e1c1bae6624f.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Catapult 1.mp3-97fd2182f446d17f38cc381c62e9b5ad.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Weapons and Impacts/Catapult 1.mp3"
+dest_files=[ "res://.import/Catapult 1.mp3-97fd2182f446d17f38cc381c62e9b5ad.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

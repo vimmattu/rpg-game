@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Dog Growl 3.mp3-17c89683c59a05c914b291dab457949c.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Beasts and Animals/Dog Growl 3.mp3"
+dest_files=[ "res://.import/Dog Growl 3.mp3-17c89683c59a05c914b291dab457949c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

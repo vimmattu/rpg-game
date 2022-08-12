@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Spell - Plant Hand 2.mp3-b08c0944fe6693fb38b3f0d13ac27ec1.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Spells/Spell - Plant Hand 2.mp3"
+dest_files=[ "res://.import/Spell - Plant Hand 2.mp3-b08c0944fe6693fb38b3f0d13ac27ec1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

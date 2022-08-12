@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Book Open.mp3-ee7c2fea1bf2809a354642ebc7b565cc.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Coins and Inventory/Book Open.mp3"
+dest_files=[ "res://.import/Book Open.mp3-ee7c2fea1bf2809a354642ebc7b565cc.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

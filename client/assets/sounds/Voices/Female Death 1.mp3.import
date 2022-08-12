@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Female Death 1.mp3-4952940ecba714867de1a88b94cbecf9.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Voices/Female Death 1.mp3"
+dest_files=[ "res://.import/Female Death 1.mp3-4952940ecba714867de1a88b94cbecf9.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

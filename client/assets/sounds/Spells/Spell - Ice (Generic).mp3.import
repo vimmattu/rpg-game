@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Spell - Ice (Generic).mp3-e1a088f60074b65c43c4378baaace716.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Spells/Spell - Ice (Generic).mp3"
+dest_files=[ "res://.import/Spell - Ice (Generic).mp3-e1a088f60074b65c43c4378baaace716.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

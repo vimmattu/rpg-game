@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Equip (Clothes).mp3-6cc8d1b08b210e7a26952f5c71e2b682.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Coins and Inventory/Equip (Clothes).mp3"
+dest_files=[ "res://.import/Equip (Clothes).mp3-6cc8d1b08b210e7a26952f5c71e2b682.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Spell - Venom 1.mp3-1dad3e388aecfa470af2f15624fa8fc6.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Spells/Spell - Venom 1.mp3"
+dest_files=[ "res://.import/Spell - Venom 1.mp3-1dad3e388aecfa470af2f15624fa8fc6.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

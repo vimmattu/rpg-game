@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Horse Step (Road) 1.mp3-f8f22537ca9ebbf327e0b6b22833c77e.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Beasts and Animals/Horse Step (Road) 1.mp3"
+dest_files=[ "res://.import/Horse Step (Road) 1.mp3-f8f22537ca9ebbf327e0b6b22833c77e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

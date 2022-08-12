@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Dog 3.mp3-cee1c8f5d48a47be4f9cba49f98609fe.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Beasts and Animals/Dog 3.mp3"
+dest_files=[ "res://.import/Dog 3.mp3-cee1c8f5d48a47be4f9cba49f98609fe.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

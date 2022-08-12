@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Spell - Electric Hand 1.mp3-812f93c6e23f1775628cc1be6d4ca422.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Spells/Spell - Electric Hand 1.mp3"
+dest_files=[ "res://.import/Spell - Electric Hand 1.mp3-812f93c6e23f1775628cc1be6d4ca422.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

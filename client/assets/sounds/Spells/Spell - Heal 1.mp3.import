@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Spell - Heal 1.mp3-f013d6970d3bf147175b147c54690964.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Spells/Spell - Heal 1.mp3"
+dest_files=[ "res://.import/Spell - Heal 1.mp3-f013d6970d3bf147175b147c54690964.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

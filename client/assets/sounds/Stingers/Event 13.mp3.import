@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Event 13.mp3-3e648c303773c38658f65a9408e10b5b.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Stingers/Event 13.mp3"
+dest_files=[ "res://.import/Event 13.mp3-3e648c303773c38658f65a9408e10b5b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

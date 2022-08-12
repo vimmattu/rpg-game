@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Unsheathe 2.mp3-a1088a4095ccdbfca583074ce593ff0b.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Misc/Unsheathe 2.mp3"
+dest_files=[ "res://.import/Unsheathe 2.mp3-a1088a4095ccdbfca583074ce593ff0b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

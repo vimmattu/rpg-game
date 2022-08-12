@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Horse Run 3.mp3-520f423d4541ba43602dd0e229c9a605.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Beasts and Animals/Horse Run 3.mp3"
+dest_files=[ "res://.import/Horse Run 3.mp3-520f423d4541ba43602dd0e229c9a605.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

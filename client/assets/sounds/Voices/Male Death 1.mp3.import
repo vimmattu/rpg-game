@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Male Death 1.mp3-c542f6fc9b58c86f3c8433c844d9138e.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Voices/Male Death 1.mp3"
+dest_files=[ "res://.import/Male Death 1.mp3-c542f6fc9b58c86f3c8433c844d9138e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

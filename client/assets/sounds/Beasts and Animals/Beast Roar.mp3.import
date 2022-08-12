@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Beast Roar.mp3-6074feb9e08a798385ff5d4cc29791a8.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Beasts and Animals/Beast Roar.mp3"
+dest_files=[ "res://.import/Beast Roar.mp3-6074feb9e08a798385ff5d4cc29791a8.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

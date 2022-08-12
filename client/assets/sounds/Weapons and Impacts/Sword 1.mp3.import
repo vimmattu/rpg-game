@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Sword 1.mp3-069b016c9458cc6ce28a7af047241a64.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Weapons and Impacts/Sword 1.mp3"
+dest_files=[ "res://.import/Sword 1.mp3-069b016c9458cc6ce28a7af047241a64.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

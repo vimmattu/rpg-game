@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Beast 8.mp3-8edf35562a59304d80726ea2f32c9ca5.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Beasts and Animals/Beast 8.mp3"
+dest_files=[ "res://.import/Beast 8.mp3-8edf35562a59304d80726ea2f32c9ca5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

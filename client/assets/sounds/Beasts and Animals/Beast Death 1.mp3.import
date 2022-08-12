@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Beast Death 1.mp3-13beddb990c4a41006710a02dffe7e49.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Beasts and Animals/Beast Death 1.mp3"
+dest_files=[ "res://.import/Beast Death 1.mp3-13beddb990c4a41006710a02dffe7e49.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

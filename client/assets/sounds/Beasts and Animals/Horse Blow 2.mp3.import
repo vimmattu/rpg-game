@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Horse Blow 2.mp3-53427a20e610cc40123cb93169bd8a6c.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Beasts and Animals/Horse Blow 2.mp3"
+dest_files=[ "res://.import/Horse Blow 2.mp3-53427a20e610cc40123cb93169bd8a6c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
