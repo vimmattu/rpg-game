@@ -37,6 +37,7 @@ func on_animation_started(_anim_name: String):
 func on_animation_finished(_anim_name: String):
 	hide()
 	$AttackCooldown.start()
+	rotation = 0
 
 
 func on_attack_cooldown_timeout():
@@ -47,6 +48,11 @@ func on_attack_cooldown_timeout():
 
 func _physics_process(_delta):
 	if is_attacking:
+		return
+
+	if Input.is_action_pressed("click_attack"):
+		rotation = get_angle_to(get_global_mouse_position())
+		$AnimationPlayer.play("cleave")
 		return
 
 	var vec = Vector2()
