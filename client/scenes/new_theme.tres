@@ -1,0 +1,6 @@
+[gd_resource type="Theme" format=2]
+
+[resource]
+ProgressBar/fonts/font = null
+ProgressBar/styles/bg = null
+ProgressBar/styles/fg = null

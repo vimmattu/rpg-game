@@ -1,0 +1,22 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/HumanSprite.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Unit.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/Player.gd" type="Script" id=3]
+[ext_resource path="res://scenes/MeleeWeapon.tscn" type="PackedScene" id=4]
+
+[node name="Player" instance=ExtResource( 2 )]
+collision_mask = 2
+script = ExtResource( 3 )
+
+[node name="HumanSprite" parent="." index="2" instance=ExtResource( 1 )]
+texture = "warrior"
+variant = 4
+
+[node name="MeleeWeapon" parent="." index="3" instance=ExtResource( 4 )]
+min_damage = 100
+max_damage = 250
+
+[node name="Camera2D" type="Camera2D" parent="." index="4"]
+current = true
+zoom = Vector2( 0.25, 0.25 )
