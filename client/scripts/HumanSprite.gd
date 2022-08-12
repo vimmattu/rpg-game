@@ -57,7 +57,7 @@ func _get_texture_path_for_sprite(sprite_name: String) -> String:
 
 func update_animation_from_velocity(velocity: Vector2):
 	if velocity == Vector2.ZERO:
-		$AnimationPlayer.stop()
+		$AnimationPlayer.play("RESET")
 		return
 
 	$AnimationPlayer.play("walk")

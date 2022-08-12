@@ -28,6 +28,9 @@ func take_damage(damage: int):
 	$FCTManager.show_value(str(damage))
 	if health <= 0:
 		on_death()
+	var modifier := 1.0 * health / max_health
+	$TakeDamageSound.pitch_scale = 1.0 + (1 * modifier)
+	$TakeDamageSound.play()
 
 
 func damage_target(body, damage: int):

@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://scenes/BaseSprite.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/MonsterSprite.gd" type="Script" id=2]
 [ext_resource path="res://assets/monsters/bug1.png" type="Texture" id=3]
+[ext_resource path="res://assets/sounds/Steps/Step 1.mp3" type="AudioStream" id=4]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -35,6 +36,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 0, 1 ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath("StepSound")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.2 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
 
 [node name="MonsterSprite" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
@@ -49,3 +64,9 @@ hframes = 2
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1"]
 anims/RESET = SubResource( 2 )
 anims/walk = SubResource( 1 )
+
+[node name="StepSound" type="AudioStreamPlayer2D" parent="." index="2"]
+stream = ExtResource( 4 )
+volume_db = -20.0
+pitch_scale = 2.0
+max_distance = 500.0
