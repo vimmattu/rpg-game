@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/HealthBar.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scripts/Unit.gd" type="Script" id=2]
 [ext_resource path="res://scenes/FCTManager.tscn" type="PackedScene" id=3]
 [ext_resource path="res://assets/sounds/Weapons and Impacts/Impact Flesh 1.mp3" type="AudioStream" id=4]
+[ext_resource path="res://scenes/AttackRefillBar.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CapsuleShape2D" id=4]
 radius = 5.75
@@ -11,6 +12,10 @@ height = 4.0
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 3.75832
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 6.0
+height = 6.0
 
 [node name="Unit" type="KinematicBody2D"]
 script = ExtResource( 2 )
@@ -29,6 +34,9 @@ position = Vector2( 0, -10 )
 
 [node name="FCTManager" parent="." instance=ExtResource( 3 )]
 
+[node name="AttackRefillBar" parent="." instance=ExtResource( 5 )]
+position = Vector2( 0, 10 )
+
 [node name="HealthbarTimer" type="Timer" parent="."]
 wait_time = 5.0
 
@@ -36,3 +44,9 @@ wait_time = 5.0
 stream = ExtResource( 4 )
 pitch_scale = 2.0
 max_distance = 500.0
+
+[node name="SelectArea" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SelectArea"]
+position = Vector2( 0, 2 )
+shape = SubResource( 5 )

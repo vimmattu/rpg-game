@@ -1,5 +1,7 @@
 extends KinematicBody2D
 
+signal hovered
+
 
 var _unit_sprite_nodes = []
 var is_running := false
@@ -39,12 +41,25 @@ func damage_target(body, damage: int):
 
 func _ready():
 	$HealthbarTimer.connect("timeout", self, "on_healthbar_timeout")
+	$SelectArea.connect("mouse_entered", self, "on_hovered")
 	healthbar.hide()
 	healthbar.max_value = max_health
 	healthbar.value = health
 	for node in get_children():
 		if node.get_class() == "UnitSprite":
 			_unit_sprite_nodes.append(node)
+
+
+func get_unit_details():
+	return {
+		"health": health,
+		"max_health": max_health
+	}
+
+
+func on_hovered():
+	print(get_unit_details())
+	emit_signal("hovered", self)
 
 
 func get_movement() -> Vector2:
