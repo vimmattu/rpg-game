@@ -10,9 +10,7 @@ export var max_damage := 10
 func _ready():
 	hide()
 	$AnimationPlayer.connect("animation_started", self, "on_animation_started")
-	$AnimationPlayer.connect("animation_finished", self, "on_animation_finished")
 	$WeaponLoc/DamageArea.connect("body_entered", self, "on_damagearea_entered")
-	$AttackCooldown.connect("timeout", self, "on_attack_cooldown_timeout")
 
 
 func on_damagearea_entered(body):
@@ -32,15 +30,13 @@ func on_animation_started(_anim_name: String):
 	show()
 	is_attacking = true
 	$WeaponLoc/DamageArea/CollisionShape2D.disabled = false
-
-
-func on_animation_finished(_anim_name: String):
+	get_parent().emit_signal("attack_started")
+	yield($AnimationPlayer, "animation_finished")
 	hide()
-	$AttackCooldown.start()
 	rotation = 0
-
-
-func on_attack_cooldown_timeout():
+	get_parent().get_node("AttackRefillBar").display($AttackCooldown.wait_time)
+	$AttackCooldown.start()
+	yield($AttackCooldown, "timeout")
 	is_attacking = false
 	$WeaponLoc/DamageArea/CollisionShape2D.disabled = true
 	_damaged_units.clear()

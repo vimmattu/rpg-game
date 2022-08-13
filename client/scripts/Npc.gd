@@ -13,8 +13,6 @@ func get_class() -> String:
 func _ready():
 	$AggroRange.connect("body_entered", self, "on_aggro_range_entered")
 	$AnimationPlayer.connect("animation_started", self, "on_attack_started")
-	$AnimationPlayer.connect("animation_finished", self, "on_attack_finished")
-	$AttackInterval.connect("timeout", self, "on_attack_cooldown_timeout")
 
 
 func on_death():
@@ -23,14 +21,10 @@ func on_death():
 
 func on_attack_started(_anim_name):
 	is_attacking = true
-
-
-func on_attack_finished(_anim_name):
+	yield($AnimationPlayer, "animation_finished")
 	is_attacking = false
 	$AttackInterval.start()
-
-
-func on_attack_cooldown_timeout():
+	yield($AttackInterval, "timeout")
 	$AttackInterval.stop()
 
 
