@@ -97,9 +97,6 @@ collision_mask = 2
 speed = 40
 health = 1000
 max_health = 1000
-min_damage = 4
-max_damage = 6
-knockback_force = 50.0
 
 [node name="Npc3" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 555, 240 )
@@ -107,9 +104,6 @@ collision_mask = 2
 speed = 40
 health = 1000
 max_health = 1000
-min_damage = 4
-max_damage = 6
-knockback_force = 50.0
 
 [node name="Npc4" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 400, 248 )
@@ -117,9 +111,6 @@ collision_mask = 2
 speed = 40
 health = 1000
 max_health = 1000
-min_damage = 4
-max_damage = 6
-knockback_force = 50.0
 
 [node name="Npc5" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 350, 59 )
@@ -127,9 +118,6 @@ collision_mask = 2
 speed = 40
 health = 1000
 max_health = 1000
-min_damage = 4
-max_damage = 6
-knockback_force = 50.0
 
 [node name="Npc6" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 350, 59 )
@@ -137,9 +125,6 @@ collision_mask = 2
 speed = 40
 health = 1000
 max_health = 1000
-min_damage = 4
-max_damage = 6
-knockback_force = 50.0
 
 [node name="Npc7" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 214, 257 )
@@ -147,9 +132,9 @@ collision_mask = 2
 speed = 40
 health = 1000
 max_health = 1000
-min_damage = 4
-max_damage = 6
-knockback_force = 50.0
+min_damage = 60
+max_damage = 120
+knockback_force = 300.0
 
 [node name="Npc2" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 695, 428 )
@@ -157,9 +142,6 @@ collision_mask = 2
 speed = 40
 health = 100
 max_health = 100
-min_damage = 4
-max_damage = 6
-knockback_force = 50.0
 
 [node name="Doodads" type="TileMap" parent="."]
 tile_set = SubResource( 2 )

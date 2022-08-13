@@ -31,7 +31,6 @@ func on_animation_started(_anim_name: String):
 	show()
 	is_attacking = true
 	$WeaponLoc/DamageArea/CollisionShape2D.disabled = false
-	get_parent().emit_signal("attack_started")
 	yield($AnimationPlayer, "animation_finished")
 	hide()
 	rotation = 0

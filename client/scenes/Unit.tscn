@@ -50,3 +50,6 @@ max_distance = 500.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SelectArea"]
 position = Vector2( 0, 2 )
 shape = SubResource( 5 )
+
+[node name="RespawnTimer" type="Timer" parent="."]
+wait_time = 10.0

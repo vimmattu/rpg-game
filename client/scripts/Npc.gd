@@ -12,15 +12,21 @@ func get_class() -> String:
 
 
 func _ready():
+	connect("death_started", self, "on_death_started")
 	$AggroRange.connect("body_entered", self, "on_aggro_range_entered")
-	$AnimationPlayer.connect("animation_started", self, "on_attack_started")
+	$AnimationPlayer.connect("animation_started", self, "on_animation_started")
 
 
-func on_death():
-	queue_free()
+func on_death_started():
+	$AnimationPlayer.play("death")
 
 
-func on_attack_started(_anim_name):
+func on_animation_started(anim_name: String):
+	if anim_name == 'attack':
+		on_attack_started()
+
+
+func on_attack_started():
 	is_attacking = true
 	yield($AnimationPlayer, "animation_finished")
 	is_attacking = false
@@ -30,8 +36,17 @@ func on_attack_started(_anim_name):
 
 
 func on_aggro_range_entered(body):
+	if target:
+		return
 	if body.get_class() == "Player":
+		if body.is_dead: return
 		target = body
+		target.connect("death_started", self, "on_target_death")
+
+
+func on_target_death():
+	target.disconnect("death_started", self, "on_target_death")
+	target = null
 
 
 func get_movement() -> Vector2:
