@@ -10,7 +10,6 @@ collision_mask = 2
 script = ExtResource( 3 )
 
 [node name="HumanSprite" parent="." index="2" instance=ExtResource( 1 )]
-texture = "warrior"
 variant = 4
 
 [node name="MeleeWeapon" parent="." index="3" instance=ExtResource( 4 )]
