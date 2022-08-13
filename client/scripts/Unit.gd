@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 signal hovered
 
+var knockback = Vector2.ZERO
 
 var _unit_sprite_nodes = []
 var is_running := false
@@ -22,7 +23,10 @@ func on_healthbar_timeout():
 	healthbar.hide()
 
 
-func take_damage(damage: int):
+func take_damage(from, damage: int, knockback_force: float = 0.0):
+	if knockback_force > 0:
+		var angle = get_angle_to(from.position) + deg2rad(180)
+		knockback =	Vector2(cos(angle), sin(angle)) * knockback_force
 	healthbar.show()
 	$HealthbarTimer.start()
 	health -= damage
@@ -35,8 +39,8 @@ func take_damage(damage: int):
 	$TakeDamageSound.play()
 
 
-func damage_target(body, damage: int):
-	body.take_damage(damage)
+func damage_target(body, damage: int, knockback_force: float = 0.0):
+	body.take_damage(self, damage, knockback_force)
 
 
 func _ready():
@@ -71,7 +75,12 @@ func _update_unit_sprites(velocity: Vector2):
 		node.update_animation_from_velocity(velocity)
 
 
-func _physics_process(_delta):
+func _physics_process(delta):
+	if knockback != Vector2.ZERO:
+		knockback = knockback.move_toward(Vector2.ZERO, 200 * delta)
+		knockback = move_and_slide(knockback)
+		return
+
 	if is_attacking: return
 	var velocity := get_movement()
 	velocity = velocity.normalized() * speed

@@ -4,6 +4,7 @@ extends "res://scripts/Unit.gd"
 var target = null
 export var min_damage := 4
 export var max_damage := 6
+export var knockback_force := 50.0
 
 
 func get_class() -> String:
@@ -49,5 +50,5 @@ func get_movement() -> Vector2:
 func cause_damage():
 	if target in $AttackRange.get_overlapping_bodies():
 		var damage = int(floor(rand_range(min_damage, max_damage)))
-		damage_target(target, damage)
+		damage_target(target, damage, knockback_force)
 

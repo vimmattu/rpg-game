@@ -5,6 +5,7 @@ var is_attacking := false
 
 export var min_damage := 5
 export var max_damage := 10
+export var knockback := 150.0
 
 
 func _ready():
@@ -22,7 +23,7 @@ func on_damagearea_entered(body):
 		return
 	if body.get_class() == "Npc":
 		var damage = int(floor(rand_range(min_damage, max_damage)))
-		get_parent().damage_target(body, damage)
+		get_parent().damage_target(body, damage, knockback)
 		_damaged_units.append(body)
 
 
