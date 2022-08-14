@@ -7,6 +7,7 @@ func get_class() -> String:
 
 func _ready():
 	can_respawn = true
+	$Camera2D.current = not get_tree().has_network_peer() or is_network_master()
 	connect("death_started", self, "on_death_started")
 	connect("respawn", self, "on_respawn")
 

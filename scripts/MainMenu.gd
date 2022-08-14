@@ -1,5 +1,8 @@
 extends VBoxContainer
 
+var game_scene = preload("res://scenes/TestWorld.tscn")
+var lobby_scene = preload("res://scenes/Lobby.tscn")
+
 
 func _ready():
 	var _sp = $ButtonSP.connect("pressed", self, "on_start_singleplayer")
@@ -9,11 +12,11 @@ func _ready():
 
 
 func on_start_singleplayer():
-	get_tree().change_scene("res://scenes/TestWorld.tscn")
+	var _game = get_tree().change_scene_to(game_scene)
 
 
 func on_start_multiplayer():
-	print("not yet implemented")
+	var _lobby = get_tree().change_scene_to(lobby_scene)
 
 
 func on_quit_game():

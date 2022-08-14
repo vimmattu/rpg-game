@@ -12,6 +12,7 @@ func get_class() -> String:
 
 
 func _ready():
+	set_network_master(1)
 	connect("death_started", self, "on_death_started")
 	$AggroRange.connect("body_entered", self, "on_aggro_range_entered")
 	$AnimationPlayer.connect("animation_started", self, "on_animation_started")

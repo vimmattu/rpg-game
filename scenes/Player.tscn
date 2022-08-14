@@ -15,7 +15,6 @@ script = ExtResource( 3 )
 variant = 2
 
 [node name="Camera2D" type="Camera2D" parent="." index="3"]
-current = true
 zoom = Vector2( 0.25, 0.25 )
 
 [node name="TabSelector" type="Area2D" parent="." index="12"]

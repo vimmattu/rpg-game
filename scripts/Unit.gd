@@ -6,6 +6,9 @@ signal death_started
 signal death_finished
 signal respawn
 
+var puppet_pos = Vector2.ZERO
+var puppet_motion = Vector2.ZERO
+
 var knockback = Vector2.ZERO
 
 var _unit_sprite_nodes = []
@@ -109,6 +112,11 @@ func _update_unit_sprites(velocity: Vector2):
 		node.update_animation_from_velocity(velocity)
 
 
+remote func network_update(r_pos, r_motion):
+	puppet_pos = r_pos
+	puppet_motion = r_motion
+
+
 func _physics_process(delta):
 	if knockback != Vector2.ZERO:
 		knockback = knockback.move_toward(Vector2.ZERO, 200 * delta)
@@ -117,10 +125,18 @@ func _physics_process(delta):
 
 	if is_dead: return
 	if is_attacking: return
-	var velocity := get_movement()
-	velocity = velocity.normalized() * speed
-	if is_running:
-		velocity *= 2
+	
+	var velocity = Vector2()
+	if is_network_master():
+		velocity = get_movement()
+		velocity = velocity.normalized() * speed
+		if is_running:
+			velocity *= 2
+		rpc_unreliable("network_update", global_position, velocity)
+	else:
+		global_position = puppet_pos
+		velocity = puppet_motion
+	
 	_update_unit_sprites(velocity)
 	move_and_slide(velocity)
 

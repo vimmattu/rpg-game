@@ -1,6 +1,5 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Npc.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/tilesets/world.png" type="Texture" id=3]
 [ext_resource path="res://assets/tilesets/outside.png" type="Texture" id=4]
@@ -103,10 +102,6 @@ equip_scene = ExtResource( 7 )
 
 [node name="Sprite" parent="YSort/Item2" index="0"]
 texture = ExtResource( 6 )
-
-[node name="Player" parent="YSort" instance=ExtResource( 1 )]
-position = Vector2( 218, 149 )
-speed = 100
 
 [node name="Npc" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 507, 115 )

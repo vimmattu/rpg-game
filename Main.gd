@@ -2,12 +2,10 @@ extends Node2D
 
 
 func _ready():
-	if (
-		"--server" in OS.get_cmdline_args() or
-		OS.has_feature("Server")
-	):
+	if Global.is_server():
 		print("Run server")
+		var _s = get_tree().change_scene("res://scenes/Lobby.tscn")
 		return
-	print("Running client")
-	get_tree().change_scene("res://scenes/MainMenu.tscn")
+	print("Run client")
+	var _s = get_tree().change_scene("res://scenes/MainMenu.tscn")
 
