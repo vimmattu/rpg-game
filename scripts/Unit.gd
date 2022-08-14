@@ -7,7 +7,8 @@ signal death_finished
 signal respawn
 
 var puppet_pos = Vector2.ZERO
-var puppet_motion = Vector2.ZERO
+var puppet_velocity = Vector2.ZERO
+var puppet_knockback = Vector2.ZERO
 
 var knockback = Vector2.ZERO
 
@@ -51,9 +52,9 @@ func on_healthbar_timeout():
 	healthbar.hide()
 
 
-func take_damage(from, damage: int, knockback_force: float = 0.0):
+remotesync func take_damage(from, damage: int, knockback_force: float = 0.0):
 	if knockback_force > 0:
-		var angle = get_angle_to(from.position) + deg2rad(180)
+		var angle = get_angle_to(from) + deg2rad(180)
 		knockback =	Vector2(cos(angle), sin(angle)) * knockback_force
 	healthbar.show()
 	$HealthbarTimer.start()
@@ -68,7 +69,7 @@ func take_damage(from, damage: int, knockback_force: float = 0.0):
 
 
 func damage_target(body, damage: int, knockback_force: float = 0.0):
-	body.take_damage(self, damage, knockback_force)
+	body.rpc("take_damage", self.position, damage, knockback_force)
 
 
 func _ready():
@@ -112,15 +113,22 @@ func _update_unit_sprites(velocity: Vector2):
 		node.update_animation_from_velocity(velocity)
 
 
-remote func network_update(r_pos, r_motion):
+puppet func update_remote_movement(r_pos, r_velocity, r_knockback):
 	puppet_pos = r_pos
-	puppet_motion = r_motion
+	puppet_velocity = r_velocity
+	puppet_knockback = r_knockback
 
 
 func _physics_process(delta):
-	if knockback != Vector2.ZERO:
-		knockback = knockback.move_toward(Vector2.ZERO, 200 * delta)
-		knockback = move_and_slide(knockback)
+	var _kb = knockback if is_network_master() else puppet_knockback
+	if _kb != Vector2.ZERO:
+		if is_network_master():
+			knockback = knockback.move_toward(Vector2.ZERO, 200 * delta)
+			knockback = move_and_slide(knockback)
+			rpc_unreliable("update_remote_movement", position, Vector2.ZERO, knockback)
+		else:
+			move_and_slide(puppet_knockback)
+			puppet_pos = position
 		return
 
 	if is_dead: return
@@ -132,11 +140,14 @@ func _physics_process(delta):
 		velocity = velocity.normalized() * speed
 		if is_running:
 			velocity *= 2
-		rpc_unreliable("network_update", global_position, velocity)
+		rpc_unreliable("update_remote_movement", position, velocity, knockback)
 	else:
-		global_position = puppet_pos
-		velocity = puppet_motion
+		position = puppet_pos
+		velocity = puppet_velocity
 	
 	_update_unit_sprites(velocity)
 	move_and_slide(velocity)
+
+	if not is_network_master():
+		puppet_pos = position
 
