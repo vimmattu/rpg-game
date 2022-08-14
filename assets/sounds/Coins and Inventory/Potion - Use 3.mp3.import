@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Potion - Use 3.mp3-c39611a76682157b7d4d1f011bf0312c.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Coins and Inventory/Potion - Use 3.mp3"
+dest_files=[ "res://.import/Potion - Use 3.mp3-c39611a76682157b7d4d1f011bf0312c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

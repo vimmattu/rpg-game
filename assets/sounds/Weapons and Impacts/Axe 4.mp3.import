@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Axe 4.mp3-5ae65d3b03480ff7040b12975b48a692.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Weapons and Impacts/Axe 4.mp3"
+dest_files=[ "res://.import/Axe 4.mp3-5ae65d3b03480ff7040b12975b48a692.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

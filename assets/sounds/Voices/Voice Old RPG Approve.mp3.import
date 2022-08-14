@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Voice Old RPG Approve.mp3-5c9d7bd799b5b2001ed82263cccfbd6d.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Voices/Voice Old RPG Approve.mp3"
+dest_files=[ "res://.import/Voice Old RPG Approve.mp3-5c9d7bd799b5b2001ed82263cccfbd6d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

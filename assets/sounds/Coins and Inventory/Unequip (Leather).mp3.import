@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Unequip (Leather).mp3-b42a4995607d1a2e4d22f602ef980e4b.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Coins and Inventory/Unequip (Leather).mp3"
+dest_files=[ "res://.import/Unequip (Leather).mp3-b42a4995607d1a2e4d22f602ef980e4b.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

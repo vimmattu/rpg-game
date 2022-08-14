@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Horse Stop.mp3-0ff15fc3412136d267a0e7445882130d.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Beasts and Animals/Horse Stop.mp3"
+dest_files=[ "res://.import/Horse Stop.mp3-0ff15fc3412136d267a0e7445882130d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

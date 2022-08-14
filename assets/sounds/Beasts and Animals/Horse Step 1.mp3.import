@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Horse Step 1.mp3-1abc8cd6ec8c90f41a026265469e2dad.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Beasts and Animals/Horse Step 1.mp3"
+dest_files=[ "res://.import/Horse Step 1.mp3-1abc8cd6ec8c90f41a026265469e2dad.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

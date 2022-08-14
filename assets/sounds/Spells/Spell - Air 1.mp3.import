@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Spell - Air 1.mp3-969290c608c05dc1dd5eece1718f0d82.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Spells/Spell - Air 1.mp3"
+dest_files=[ "res://.import/Spell - Air 1.mp3-969290c608c05dc1dd5eece1718f0d82.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

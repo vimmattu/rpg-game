@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Cannon.mp3-a5fc0cff96dadfb01f6298a0977b11b1.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Weapons and Impacts/Cannon.mp3"
+dest_files=[ "res://.import/Cannon.mp3-a5fc0cff96dadfb01f6298a0977b11b1.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

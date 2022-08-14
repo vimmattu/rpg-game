@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Spell - Revive.mp3-ded97e0020849c6a9b59e430b209e0fb.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Spells/Spell - Revive.mp3"
+dest_files=[ "res://.import/Spell - Revive.mp3-ded97e0020849c6a9b59e430b209e0fb.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

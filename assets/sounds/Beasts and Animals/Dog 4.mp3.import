@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Dog 4.mp3-4e7b312dc0ce5a91a3ce2c0f78906439.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Beasts and Animals/Dog 4.mp3"
+dest_files=[ "res://.import/Dog 4.mp3-4e7b312dc0ce5a91a3ce2c0f78906439.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

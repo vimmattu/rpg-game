@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Arrow 2.mp3-83249596b1537dd9be262fd8145322c7.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Weapons and Impacts/Arrow 2.mp3"
+dest_files=[ "res://.import/Arrow 2.mp3-83249596b1537dd9be262fd8145322c7.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

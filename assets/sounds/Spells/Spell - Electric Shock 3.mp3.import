@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Spell - Electric Shock 3.mp3-98bc513a09d53a84fca1662da685b11e.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Spells/Spell - Electric Shock 3.mp3"
+dest_files=[ "res://.import/Spell - Electric Shock 3.mp3-98bc513a09d53a84fca1662da685b11e.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

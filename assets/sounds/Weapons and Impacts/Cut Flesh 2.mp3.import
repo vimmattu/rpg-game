@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Cut Flesh 2.mp3-d943b78626f52b5db34efa521d22f056.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Weapons and Impacts/Cut Flesh 2.mp3"
+dest_files=[ "res://.import/Cut Flesh 2.mp3-d943b78626f52b5db34efa521d22f056.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

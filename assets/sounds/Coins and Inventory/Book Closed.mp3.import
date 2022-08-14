@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Book Closed.mp3-3e4fa57f0b926ef60c99ce143a518452.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Coins and Inventory/Book Closed.mp3"
+dest_files=[ "res://.import/Book Closed.mp3-3e4fa57f0b926ef60c99ce143a518452.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

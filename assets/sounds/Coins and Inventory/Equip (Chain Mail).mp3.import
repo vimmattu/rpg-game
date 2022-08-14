@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Equip (Chain Mail).mp3-8f57ae73a0701d79d98ddcb843f63d36.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Coins and Inventory/Equip (Chain Mail).mp3"
+dest_files=[ "res://.import/Equip (Chain Mail).mp3-8f57ae73a0701d79d98ddcb843f63d36.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Unequip (Weapon).mp3-8d2080e01ed4592349904087b7933e19.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Coins and Inventory/Unequip (Weapon).mp3"
+dest_files=[ "res://.import/Unequip (Weapon).mp3-8d2080e01ed4592349904087b7933e19.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

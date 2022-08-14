@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Spell - Ice Crack.mp3-ba9dd17feae14d8ea7b4d5f5e68edac1.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Spells/Spell - Ice Crack.mp3"
+dest_files=[ "res://.import/Spell - Ice Crack.mp3-ba9dd17feae14d8ea7b4d5f5e68edac1.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

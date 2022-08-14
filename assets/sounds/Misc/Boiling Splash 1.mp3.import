@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Boiling Splash 1.mp3-324051efb919e85e1f0d010effeb642f.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Misc/Boiling Splash 1.mp3"
+dest_files=[ "res://.import/Boiling Splash 1.mp3-324051efb919e85e1f0d010effeb642f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

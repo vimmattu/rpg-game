@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Snake 1.mp3-58a5ba37db00a15ef13b37ecdd0eaebe.mp3str"
+
+[deps]
+
+source_file="res://assets/sounds/Beasts and Animals/Snake 1.mp3"
+dest_files=[ "res://.import/Snake 1.mp3-58a5ba37db00a15ef13b37ecdd0eaebe.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
