@@ -1,5 +1,8 @@
 extends Node2D
 
+signal hover_started
+signal hover_finished
+
 var _equipper_candidate = null
 var _original_parent = null
 var _equip_instance = null
@@ -11,8 +14,21 @@ export (PackedScene) var equip_scene
 func _ready():
 	_original_parent = get_parent()
 	$AnimationPlayer.play("float")
+	$TakeRange.connect("mouse_entered", self, "on_hover_started")
+	$TakeRange.connect("mouse_exited", self, "on_hover_finished")
 	$TakeRange.connect("body_entered", self, "on_body_entered")
 	$TakeRange.connect("body_exited", self, "on_body_exited")
+
+
+func on_hover_started():
+	print("item details bitch")
+	emit_signal("hover_started")
+
+
+
+func on_hover_finished():
+	print("item details bitch")
+	emit_signal("hover_finished")
 
 
 func pick_item(body):

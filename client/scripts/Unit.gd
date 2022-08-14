@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
-signal hovered
+signal hover_started
+signal hover_finished
 signal death_started
 signal death_finished
 signal respawn
@@ -70,7 +71,8 @@ func damage_target(body, damage: int, knockback_force: float = 0.0):
 func _ready():
 	respawn_location = position
 	$HealthbarTimer.connect("timeout", self, "on_healthbar_timeout")
-	$SelectArea.connect("mouse_entered", self, "on_hovered")
+	$SelectArea.connect("mouse_entered", self, "on_hover_started")
+	$SelectArea.connect("mouse_exited", self, "on_hover_finished")
 	healthbar.hide()
 	healthbar.max_value = max_health
 	healthbar.value = health
@@ -86,9 +88,15 @@ func get_unit_details():
 	}
 
 
-func on_hovered():
+func on_hover_started():
 	print(get_unit_details())
-	emit_signal("hovered", self)
+	emit_signal("hover_started")
+
+
+
+func on_hover_finished():
+	print(get_unit_details())
+	emit_signal("hover_finished")
 
 
 func get_movement() -> Vector2:
