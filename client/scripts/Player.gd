@@ -67,7 +67,7 @@ func handle_tab_select():
 	var modifier = -1 if Input.is_action_pressed("run") else 1
 
 	var new_idx = last_hovered + modifier
-	if new_idx >= len(actual):
+	if new_idx < 0 or new_idx >= len(actual):
 		new_idx = 0
 	for node in nodes:
 		node.on_hover_finished()
