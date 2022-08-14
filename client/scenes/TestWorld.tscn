@@ -1,9 +1,12 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Npc.tscn" type="PackedScene" id=2]
 [ext_resource path="res://assets/tilesets/world.png" type="Texture" id=3]
 [ext_resource path="res://assets/tilesets/outside.png" type="Texture" id=4]
+[ext_resource path="res://scenes/Item.tscn" type="PackedScene" id=5]
+[ext_resource path="res://assets/weapons/Weapon_45.png" type="Texture" id=6]
+[ext_resource path="res://scenes/TestWeapon.tscn" type="PackedScene" id=7]
 
 [sub_resource type="TileSet" id=1]
 0/name = "world.png 0"
@@ -88,8 +91,20 @@ tile_data = PoolIntArray( 0, 0, 2, 1, 0, 2, 2, 0, 3, 3, 0, 4, 4, 0, 5, 5, 0, 6, 
 
 [node name="YSort" type="YSort" parent="."]
 
+[node name="Item" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 262, 127 )
+
+[node name="Item2" parent="YSort" instance=ExtResource( 5 )]
+position = Vector2( 141, 97 )
+item_name = "Mace"
+equip_scene = ExtResource( 7 )
+
+[node name="Sprite" parent="YSort/Item2" index="0"]
+texture = ExtResource( 6 )
+
 [node name="Player" parent="YSort" instance=ExtResource( 1 )]
 position = Vector2( 218, 149 )
+speed = 100
 
 [node name="Npc" parent="YSort" instance=ExtResource( 2 )]
 position = Vector2( 507, 115 )
@@ -148,3 +163,5 @@ tile_set = SubResource( 2 )
 cell_size = Vector2( 16, 16 )
 format = 1
 tile_data = PoolIntArray( 327703, 1, 0, 458764, 0, 0, 589842, 0, 0, 720923, 0, 0, 786441, 0, 0, 786451, 0, 0, 983056, 0, 0, 1114134, 1, 0, 1245211, 0, 0 )
+
+[editable path="YSort/Item2"]

@@ -1,0 +1,55 @@
+extends Node2D
+
+var _equipper_candidate = null
+var _original_parent = null
+var _equip_instance = null
+
+export var item_name := ""
+export (PackedScene) var equip_scene
+
+
+func _ready():
+	_original_parent = get_parent()
+	$AnimationPlayer.play("float")
+	$TakeRange.connect("body_entered", self, "on_body_entered")
+	$TakeRange.connect("body_exited", self, "on_body_exited")
+
+
+func pick_item(body):
+	hide()
+	get_parent().remove_child(self)
+	_equip_instance = equip_scene.instance()
+	body.add_child(self)
+	body.add_child(_equip_instance)
+
+
+func drop_item():
+	if _equip_instance.is_attacking or _equip_instance.on_cooldown:
+		yield(_equip_instance, "cooldown_finished")
+	_equip_instance.queue_free()
+	position = get_parent().position
+	get_parent().remove_child(self)
+	_original_parent.add_child(self)
+	show()
+
+
+func on_body_entered(body):
+	if body.get_class() == "Player":
+		_equipper_candidate = body
+
+
+func on_body_exited(body):
+	if body == _equipper_candidate:
+		_equipper_candidate = null
+
+
+func _input(event):
+	if _equipper_candidate and Input.is_action_just_pressed("ui_accept"):
+		if _equipper_candidate.is_dead: return
+		pick_item(_equipper_candidate)
+		_equipper_candidate = null
+		return
+	if get_parent() != _original_parent and Input.is_action_just_pressed("ui_select"):
+		if get_parent().is_dead: return
+		drop_item()
+
