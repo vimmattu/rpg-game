@@ -39,4 +39,37 @@ func _input(_event):
 		is_running = true
 	elif Input.is_action_just_released("run"):
 		is_running = false
+	if Input.is_action_just_pressed("tab_select"):
+		handle_tab_select()
+
+
+func handle_tab_select():
+	var last_hovered = -1
+	var actual = []
+	var nodes = get_tree().get_nodes_in_group("hoverable")
+	var overlapping_nodes = []
+	var overlapping_areas = []
+
+	for a in $TabSelector.get_overlapping_areas():
+		overlapping_areas.append(a.get_parent())
+	overlapping_nodes.append_array(overlapping_areas)
+	overlapping_nodes.append_array($TabSelector.get_overlapping_bodies())
+
+	for node in nodes:
+		if node in overlapping_nodes:
+			actual.append(node)
+	if not len(actual): return
+
+	for i in range(len(actual)):
+		if actual[i].get_node("HoverIndicator").visible:
+			last_hovered = i
+
+	var modifier = -1 if Input.is_action_pressed("run") else 1
+
+	var new_idx = last_hovered + modifier
+	if new_idx >= len(actual):
+		new_idx = 0
+	for node in nodes:
+		node.on_hover_finished()
+	actual[new_idx].on_hover_started()
 

@@ -3,6 +3,7 @@ extends Node2D
 signal hover_started
 signal hover_finished
 
+var _hovered := false
 var _equipper_candidate = null
 var _original_parent = null
 var _equip_instance = null
@@ -12,6 +13,7 @@ export (PackedScene) var equip_scene
 
 
 func _ready():
+	add_to_group("hoverable")
 	_original_parent = get_parent()
 	$AnimationPlayer.play("float")
 	$TakeRange.connect("mouse_entered", self, "on_hover_started")
@@ -21,12 +23,14 @@ func _ready():
 
 
 func on_hover_started():
+	_hovered = true
 	print("item details bitch")
 	emit_signal("hover_started")
 
 
 
 func on_hover_finished():
+	_hovered = false
 	print("item details bitch")
 	emit_signal("hover_finished")
 
@@ -61,6 +65,7 @@ func on_body_exited(body):
 
 func _input(event):
 	if _equipper_candidate and Input.is_action_just_pressed("ui_accept"):
+		if not _hovered: return
 		if _equipper_candidate.is_dead: return
 		pick_item(_equipper_candidate)
 		_equipper_candidate = null

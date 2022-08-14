@@ -69,6 +69,7 @@ func damage_target(body, damage: int, knockback_force: float = 0.0):
 
 
 func _ready():
+	add_to_group("hoverable")
 	respawn_location = position
 	$HealthbarTimer.connect("timeout", self, "on_healthbar_timeout")
 	$SelectArea.connect("mouse_entered", self, "on_hover_started")
