@@ -1,5 +1,8 @@
 extends Node2D
 
+signal cooldown_finished
+
+var on_cooldown := false
 var _damaged_units = []
 var is_attacking := false
 
@@ -15,6 +18,8 @@ func _ready():
 
 
 func on_damagearea_entered(body):
+	if on_cooldown:
+		return
 	if not is_attacking:
 		return
 	if body == get_parent():
@@ -33,10 +38,13 @@ func on_animation_started(_anim_name: String):
 	$WeaponLoc/DamageArea/CollisionShape2D.disabled = false
 	yield($AnimationPlayer, "animation_finished")
 	hide()
-	rotation = 0
 	get_parent().get_node("AttackRefillBar").display($AttackCooldown.wait_time)
+	on_cooldown = true
 	$AttackCooldown.start()
+	rotation = 0
 	yield($AttackCooldown, "timeout")
+	emit_signal("cooldown_finished")
+	on_cooldown = false
 	is_attacking = false
 	$WeaponLoc/DamageArea/CollisionShape2D.disabled = true
 	_damaged_units.clear()
