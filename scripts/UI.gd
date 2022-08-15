@@ -7,7 +7,7 @@ func _ready():
 	$Tooltip.hide()
 
 
-func _update_tooltip(key = null):
+func _update_tooltip():
 	if not tooltip_objs.size():
 		$Tooltip.hide()
 		return
@@ -22,14 +22,10 @@ func add_tooltip(key, title, description):
 		"title": title,
 		"description": description,
 	}
-	if key.has_signal("damaged"):
-		key.connect("damaged", self, "_update_tooltip")
-	_update_tooltip(key)
+	_update_tooltip()
 
 
 func remove_tooltip(key):
 	tooltip_objs.erase(key)
 	_update_tooltip()
-	if key.has_signal("damaged"):
-		key.disconnect("damaged", self, "_update_tooltip")
 

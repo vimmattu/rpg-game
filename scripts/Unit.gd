@@ -37,6 +37,7 @@ func die():
 	tween.start()
 	yield(tween, 'tween_completed')
 	emit_signal("death_finished")
+	UI.remove_tooltip(self)
 	if not can_respawn:
 		queue_free()
 	else:
@@ -63,6 +64,7 @@ remotesync func take_damage(from, damage: int, knockback_force: float = 0.0):
 	healthbar.value = health
 	$FCTManager.show_value(str(damage))
 	emit_signal("damaged")
+	display_unit_tooltip(true)
 	if health <= 0:
 		die()
 	var modifier := 1.0 * health / max_health
@@ -98,9 +100,25 @@ func get_unit_details():
 	}
 
 
+func get_tooltip_string():
+	var s = ""
+	s += "Health: %d/%d\n" % [health, max_health]
+	return s
+
+
+func display_unit_tooltip(require_already_visible: bool = false):
+	if require_already_visible and not self in UI.tooltip_objs:
+		return 
+	UI.add_tooltip(
+		self,
+		self.name,
+		get_tooltip_string()
+	)
+
+
 func on_hover_started():
 	emit_signal("hover_started")
-	UI.add_tooltip(self, self.name, "What the fuck\nNew line")
+	display_unit_tooltip()
 
 
 func on_hover_finished():
