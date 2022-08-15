@@ -1,5 +1,6 @@
 extends KinematicBody2D
 
+signal damaged
 signal hover_started
 signal hover_finished
 signal death_started
@@ -61,6 +62,7 @@ remotesync func take_damage(from, damage: int, knockback_force: float = 0.0):
 	health -= damage
 	healthbar.value = health
 	$FCTManager.show_value(str(damage))
+	emit_signal("damaged")
 	if health <= 0:
 		die()
 	var modifier := 1.0 * health / max_health
@@ -97,14 +99,13 @@ func get_unit_details():
 
 
 func on_hover_started():
-	print(get_unit_details())
 	emit_signal("hover_started")
-
+	UI.add_tooltip(self, self.name, "What the fuck\nNew line")
 
 
 func on_hover_finished():
-	print(get_unit_details())
 	emit_signal("hover_finished")
+	UI.remove_tooltip(self)
 
 
 func get_movement() -> Vector2:
