@@ -39,20 +39,25 @@ remotesync func pick_item(body):
 	hide()
 	get_parent().remove_child(self)
 	_equip_instance = equip_scene.instance()
-	_equip_instance.set_network_master(body.get_network_master())
-	set_network_master(body.get_network_master())
-	body.add_child(self)
+
+	body.get_node("Items").add_child(self)
 	body.add_child(_equip_instance)
+	if get_tree().has_network_peer():
+		_equip_instance.set_network_master(body.get_network_master())
+		set_network_master(body.get_network_master())
 
 
 remotesync func drop_item():
 	if _equip_instance.is_attacking or _equip_instance.on_cooldown:
 		yield(_equip_instance, "cooldown_finished")
+
 	_equip_instance.queue_free()
-	position = get_parent().position
-	set_network_master(_original_parent.get_network_master())
+	position = get_parent().get_parent().position
+
 	get_parent().remove_child(self)
 	_original_parent.add_child(self)
+	if get_tree().has_network_peer():
+		set_network_master(_original_parent.get_network_master())
 	show()
 
 
@@ -77,7 +82,7 @@ func _input(event):
 		_equipper_candidate = null
 		return
 	if get_parent() != _original_parent and Input.is_action_just_pressed("ui_select"):
-		if get_parent().is_dead: return
+		if get_parent().get_parent().is_dead: return
 		if get_tree().has_network_peer():
 			rpc("drop_item")
 		else:
