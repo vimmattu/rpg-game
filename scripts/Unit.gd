@@ -69,7 +69,10 @@ remotesync func take_damage(from, damage: int, knockback_force: float = 0.0):
 
 
 func damage_target(body, damage: int, knockback_force: float = 0.0):
-	body.rpc("take_damage", self.position, damage, knockback_force)
+	if get_tree().has_network_peer():
+		body.rpc("take_damage", position, damage, knockback_force)
+	else:
+		body.take_damage(position, damage, knockback_force)
 
 
 func _ready():
@@ -108,9 +111,9 @@ func get_movement() -> Vector2:
 	return Vector2.ZERO
 
 
-func _update_unit_sprites(velocity: Vector2):
+func _update_unit_sprites(velocity):
 	for node in _unit_sprite_nodes:
-		node.update_animation_from_velocity(velocity)
+		node.update_animation_from_velocity(Vector2.ZERO if not velocity else velocity)
 
 
 puppet func update_remote_movement(r_pos, r_velocity, r_knockback):
@@ -119,35 +122,42 @@ puppet func update_remote_movement(r_pos, r_velocity, r_knockback):
 	puppet_knockback = r_knockback
 
 
-func _physics_process(delta):
-	var _kb = knockback if is_network_master() else puppet_knockback
-	if _kb != Vector2.ZERO:
-		if is_network_master():
-			knockback = knockback.move_toward(Vector2.ZERO, 200 * delta)
-			knockback = move_and_slide(knockback)
+func _handle_remote_update(_delta) -> Vector2:
+	position = puppet_pos
+	var velocity = puppet_knockback if puppet_knockback != Vector2.ZERO else puppet_velocity
+	_update_unit_sprites(velocity)
+	move_and_slide(velocity)
+	puppet_pos = position
+	return velocity
+
+
+func _handle_local_update(delta):
+	if knockback != Vector2.ZERO:
+		knockback = knockback.move_toward(Vector2.ZERO, 200 * delta)
+		knockback = move_and_slide(knockback)
+		if get_tree().has_network_peer():
 			rpc_unreliable("update_remote_movement", position, Vector2.ZERO, knockback)
-		else:
-			move_and_slide(puppet_knockback)
-			puppet_pos = position
 		return
 
 	if is_dead: return
 	if is_attacking: return
-	
-	var velocity = Vector2()
-	if is_network_master():
-		velocity = get_movement()
-		velocity = velocity.normalized() * speed
-		if is_running:
-			velocity *= 2
-		rpc_unreliable("update_remote_movement", position, velocity, knockback)
-	else:
-		position = puppet_pos
-		velocity = puppet_velocity
-	
-	_update_unit_sprites(velocity)
-	move_and_slide(velocity)
 
-	if not is_network_master():
-		puppet_pos = position
+	var velocity = Vector2.ZERO
+	velocity = get_movement()
+	velocity = velocity.normalized() * speed
+	if is_running:
+		velocity *= 2
+	if get_tree().has_network_peer():
+		rpc_unreliable("update_remote_movement", position, velocity, Vector2.ZERO)
+	move_and_slide(velocity)
+	return velocity
+
+
+func _physics_process(delta):
+	var velocity = null
+	if not get_tree().has_network_peer() or is_network_master():
+		velocity = _handle_local_update(delta)
+	else:
+		velocity = _handle_remote_update(delta)
+	_update_unit_sprites(velocity)
 

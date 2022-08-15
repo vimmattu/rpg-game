@@ -18,6 +18,8 @@ func _ready():
 
 
 func on_damagearea_entered(body):
+	if get_tree().has_network_peer() and not is_network_master():
+		return
 	if on_cooldown:
 		return
 	if not is_attacking:
@@ -50,13 +52,21 @@ func on_animation_started(_anim_name: String):
 	_damaged_units.clear()
 
 
+remotesync func attack():
+	$AnimationPlayer.play("cleave")
+
+
 func _physics_process(_delta):
 	if is_attacking:
 		return
 
 	if Input.is_action_pressed("click_attack"):
 		rotation = get_angle_to(get_global_mouse_position())
-		$AnimationPlayer.play("cleave")
+		#$AnimationPlayer.play("cleave")
+		if get_tree().has_network_peer():
+			rpc("attack")
+		else:
+			attack()
 		return
 
 	var vec = Vector2()
@@ -73,5 +83,9 @@ func _physics_process(_delta):
 		return
 
 	rotation = vec.angle()
-	$AnimationPlayer.play("cleave")
+	#$AnimationPlayer.play("cleave")
+	if get_tree().has_network_peer():
+		rpc("attack")
+	else:
+		attack()
 

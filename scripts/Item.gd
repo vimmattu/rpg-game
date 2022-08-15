@@ -35,19 +35,22 @@ func on_hover_finished():
 	emit_signal("hover_finished")
 
 
-func pick_item(body):
+remotesync func pick_item(body):
 	hide()
 	get_parent().remove_child(self)
 	_equip_instance = equip_scene.instance()
+	_equip_instance.set_network_master(body.get_network_master())
+	set_network_master(body.get_network_master())
 	body.add_child(self)
 	body.add_child(_equip_instance)
 
 
-func drop_item():
+remotesync func drop_item():
 	if _equip_instance.is_attacking or _equip_instance.on_cooldown:
 		yield(_equip_instance, "cooldown_finished")
 	_equip_instance.queue_free()
 	position = get_parent().position
+	set_network_master(_original_parent.get_network_master())
 	get_parent().remove_child(self)
 	_original_parent.add_child(self)
 	show()
@@ -67,10 +70,16 @@ func _input(event):
 	if _equipper_candidate and Input.is_action_just_pressed("ui_accept"):
 		if not _hovered: return
 		if _equipper_candidate.is_dead: return
-		pick_item(_equipper_candidate)
+		if get_tree().has_network_peer():
+			rpc("pick_item", _equipper_candidate)
+		else:
+			pick_item(_equipper_candidate)
 		_equipper_candidate = null
 		return
 	if get_parent() != _original_parent and Input.is_action_just_pressed("ui_select"):
 		if get_parent().is_dead: return
-		drop_item()
+		if get_tree().has_network_peer():
+			rpc("drop_item")
+		else:
+			drop_item()
 
