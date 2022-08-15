@@ -56,19 +56,9 @@ remotesync func attack():
 	$AnimationPlayer.play("cleave")
 
 
-func _physics_process(_delta):
-	if is_attacking:
-		return
-
+func get_attack_angle():
 	if Input.is_action_pressed("click_attack"):
-		rotation = get_angle_to(get_global_mouse_position())
-		#$AnimationPlayer.play("cleave")
-		if get_tree().has_network_peer():
-			rpc("attack")
-		else:
-			attack()
-		return
-
+		return get_angle_to(get_global_mouse_position())
 	var vec = Vector2()
 	if Input.is_action_pressed("ui_up"):
 		vec.y -= 1	
@@ -77,13 +67,20 @@ func _physics_process(_delta):
 	if Input.is_action_pressed("ui_right"):
 		vec.x += 1	
 	if Input.is_action_pressed("ui_left"):
-		vec.x -= 1	
-
+		vec.x -= 1
 	if vec == Vector2.ZERO:
 		return
+	return vec.angle()	
 
-	rotation = vec.angle()
-	#$AnimationPlayer.play("cleave")
+
+func _physics_process(_delta):
+	if is_attacking:
+		return
+
+	var attack_angle = get_attack_angle()
+	if attack_angle == null: return
+
+	rotation = attack_angle
 	if get_tree().has_network_peer():
 		rpc("attack")
 	else:
